@@ -1,0 +1,40 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+
+int main()
+{
+    int n;
+    int i = 1;
+    
+    scanf("%d", &n);
+
+    long long unsigned int x, y;
+    
+    x = n * (n+1);
+    y = n+1;
+    
+    int divisor = 1;
+    while((x != y) && (x > y)){
+        y = n + i;
+        x = n * y / divisor;
+        if ((x* y) % n == 0){
+            printf("1/%d = 1/%llu + 1/%llu\n", n, x, y);
+        }
+ 
+        i++;
+        divisor++;
+    }
+ 
+    
+    // Write an action using printf(). DON'T FORGET THE TRAILING \n
+    // To debug: fprintf(stderr, "Debug messages...\n");
+
+    return 0;
+}
